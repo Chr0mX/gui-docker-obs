@@ -1,4 +1,4 @@
-name: Multi-Arch Docker
+name: Multi-ArchDocker
 
 on:
   push:
