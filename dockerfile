@@ -51,6 +51,5 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y obs-studio \
     && apt-get clean -y
 
-USER dockeruser
 
 RUN echo "?package(bash):needs=\"X11\" section=\"DockerCustom\" title=\"OBS Screencast\" command=\"obs\"" >> /usr/share/menu/custom-docker && update-menus
