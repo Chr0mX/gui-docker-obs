@@ -2,8 +2,8 @@ FROM chr0mx/gui-docker-cuda:latest
 
 USER root
 
-RUN apt-get update  -y \
-	&& install -y --fix-broken software-properties-common ffmpeg curl wget \
+RUN apt-get update -y \
+	&& apt-get install -y --fix-broken software-properties-common ffmpeg curl wget \
 # Download the Nvidia driver	
 	&& apt-get install -y nvidia-driver-515 \
 	&& add-apt-repository ppa:obsproject/obs-studio \
