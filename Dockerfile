@@ -19,6 +19,6 @@ RUN echo headless | sudo -S -k apt-get update  -y \
 	&& echo headless | sudo -S -k rm -rf /tmp/*.deb \
 	&& echo headless | sudo -S -k rm -rf /var/lib/apt/lists/* \
 
-RUN echo "?package(bash):needs=\"X11\" section=\"DockerCustom\" title=\"OBS Screencast\" command=\"obs\"" >> /usr/share/menu/custom-docker && update-menus
+RUN echo "?package(bash):needs=\"X11\" section=\"DockerCustom\" title=\"OBS Screencast\" command=\"obs\"" >> /usr/share/menu/custom-docker && update-menus 
 
 VOLUME ["/config"]
