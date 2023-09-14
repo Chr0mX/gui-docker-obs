@@ -4,9 +4,10 @@ USER root
 
 RUN export DEBIAN_FRONTEND=noninteractive \
 	&& apt-get update -y \
-	&& apt-get install -y --fix-broken software-properties-common ffmpeg wget \
+	&& apt-get install -y --fix-broken software-properties-common mesa-utils ffmpeg wget libqt5core5a libqt5gui5 libqt5widgets5 \
 # Download the Nvidia driver	
 	&& apt-get install -y nvidia-driver-515 \
+# Add repository and create config for obs dir	
 	&& add-apt-repository ppa:obsproject/obs-studio \
 	&& mkdir -p /config/obs-studio /root/.config/ \
 	&& ln -s /config/obs-studio/ /root/.config/obs-studio \
