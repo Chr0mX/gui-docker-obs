@@ -18,7 +18,7 @@ RUN apt-get update  -y \
 	&& dpkg -i /tmp/*.deb \
 	&& rm -rf /tmp/*.deb \
 	&& rm -rf /var/lib/apt/lists/* \
-	
-RUN echo "?package(bash):needs=\"X11\" section=\"DockerCustom\" title=\"OBS Screencast\" command=\"obs\"" >> /usr/share/menu/custom-docker && update-menus \
+# Update menu	
+	&& echo "?package(bash):needs=\"X11\" section=\"DockerCustom\" title=\"OBS Screencast\" command=\"obs\"" >> /usr/share/menu/custom-docker && update-menus \
 
 VOLUME ["/config"]
