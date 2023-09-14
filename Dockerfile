@@ -13,12 +13,12 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y obs-studio \
     && apt-get clean -y
 #Downloading libNDI and obs-NDI
-	&& -S -k wget -q -O /tmp/libndi5_5.5.3-1_amd64.deb https://github.com/obs-ndi/obs-ndi/releases/download/4.11.1/libndi5_5.5.3-1_amd64.deb \
-	&& -S -k wget -q -O /tmp/obs-ndi-4.11.1-linux-x86_64.deb https://github.com/obs-ndi/obs-ndi/releases/download/4.11.1/obs-ndi-4.11.1-linux-x86_64.deb \
+	&& wget -q -O /tmp/libndi5_5.5.3-1_amd64.deb https://github.com/obs-ndi/obs-ndi/releases/download/4.11.1/libndi5_5.5.3-1_amd64.deb \
+	&& wget -q -O /tmp/obs-ndi-4.11.1-linux-x86_64.deb https://github.com/obs-ndi/obs-ndi/releases/download/4.11.1/obs-ndi-4.11.1-linux-x86_64.deb \
 #Install the NDI plugins to obs	
-	&& -S -k dpkg -i /tmp/*.deb \
-	&& -S -k rm -rf /tmp/*.deb \
-	&& -S -k rm -rf /var/lib/apt/lists/* \
+	&& dpkg -i /tmp/*.deb \
+	&& rm -rf /tmp/*.deb \
+	&& rm -rf /var/lib/apt/lists/* \
 #
 
 VOLUME ["/config"]
